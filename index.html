@@ -4,45 +4,172 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MedScan Privacy Policy</title>
+<meta name="description" content="How the MedScan medicine label scanner handles your information.">
+<meta name="theme-color" content="#1A4FBF">
 <style>
-:root{--bg:#fff;--fg:#1b1f1d;--muted:#5b6560;--accent:#1f6f54}
-@media (prefers-color-scheme:dark){:root{--bg:#121513;--fg:#e8ece9;--muted:#9aa5a0;--accent:#6fcfae}}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-main{max-width:720px;margin:0 auto;padding:24px 16px 64px}
-h1{font-size:1.8rem;margin:.2em 0} h2{font-size:1.1rem;margin:1.6em 0 .3em;color:var(--accent)}
-p{margin:.3em 0} .muted{color:var(--muted)}
+:root{
+  --bg:#F3F8FF;--card:#fff;--fg:#0F1B2D;--muted:#4A5A73;--border:#DCE6F5;
+  --primary:#1A4FBF;--primary-soft:#DCE8FF;--hero-a:#123A94;--hero-b:#1A4FBF;--on-hero:#fff;
+  --shadow:0 1px 2px rgba(15,27,45,.06),0 8px 24px rgba(15,27,45,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0B1220;--card:#131D31;--fg:#E3EAF7;--muted:#9FB0CC;--border:#2A3A5A;
+  --primary:#9CCBFF;--primary-soft:#1E3A78;--hero-a:#10265C;--hero-b:#1E3A78;--on-hero:#EAF2FF;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--primary)} a:focus-visible,summary:focus-visible{outline:3px solid var(--primary);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--card);padding:8px 12px;border-radius:8px;z-index:20}
+.skip:focus{left:8px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header.bar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--card) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--border)}
+.bar .wrap{display:flex;align-items:center;gap:12px;height:60px}
+.logo{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(135deg,var(--hero-a),var(--hero-b));color:#fff}
+.logo svg{width:20px;height:20px;fill:currentColor}
+.brand{font-weight:700;letter-spacing:-.01em}
+.tag{margin-left:auto;font-size:.8rem;color:var(--muted);border:1px solid var(--border);
+  padding:4px 10px;border-radius:999px}
+.hero{background:linear-gradient(135deg,var(--hero-a),var(--hero-b));color:var(--on-hero);
+  padding:56px 0 72px}
+.hero h1{margin:0 0 12px;font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.15;letter-spacing:-.02em}
+.hero p.lead{margin:0;max-width:640px;font-size:1.1rem;opacity:.92}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{font-size:.82rem;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.28)}
+.hls{list-style:none;margin:-40px auto 0;padding:0 20px;max-width:1040px;display:grid;gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.hl{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+.hl svg{flex:none;width:40px;height:40px;padding:9px;border-radius:12px;background:var(--primary-soft);fill:var(--primary)}
+.hl strong{display:block;line-height:1.3} .hl span{display:block;color:var(--muted);font-size:.92rem;margin-top:2px}
+.layout{display:grid;gap:32px;margin:40px auto 24px;padding:0 20px;max-width:1040px}
+@media(min-width:900px){.layout{grid-template-columns:250px 1fr;align-items:start}}
+nav.toc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+@media(min-width:900px){nav.toc{position:sticky;top:80px}}
+nav.toc summary{cursor:pointer;font-weight:600;list-style:none;padding:4px 6px}
+nav.toc summary::-webkit-details-marker{display:none}
+nav.toc ol{list-style:none;margin:8px 0 0;padding:0}
+nav.toc a{display:flex;gap:10px;align-items:baseline;padding:7px 8px;border-radius:10px;text-decoration:none;
+  color:var(--fg);font-size:.93rem}
+nav.toc a:hover{background:var(--primary-soft)}
+nav.toc a span{flex:none;width:22px;text-align:right;color:var(--primary);font-weight:700}
+@media(min-width:900px){nav.toc details{pointer-events:none}nav.toc summary{pointer-events:none}}
+.secs{display:grid;gap:14px}
+.sec{display:flex;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:20px;box-shadow:var(--shadow)}
+.num{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;
+  background:var(--primary-soft);color:var(--primary);font-weight:700}
+.sec h2{margin:2px 0 6px;font-size:1.12rem;letter-spacing:-.01em}
+.sec p{margin:0;color:var(--muted)}
+.contact{margin-top:6px;border-radius:16px;padding:22px;color:var(--on-hero);
+  background:linear-gradient(135deg,var(--hero-a),var(--hero-b))}
+.contact h2{margin:0 0 6px;font-size:1.15rem} .contact p{margin:0;opacity:.95}
+.contact a{color:inherit;font-weight:600}
+footer{max-width:1040px;margin:12px auto 48px;padding:0 20px;color:var(--muted);font-size:.88rem;
+  display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+@media print{header.bar,nav.toc,.hls{display:none}.hero{background:none;color:#000;padding:0}
+  .sec,.hl{box-shadow:none;break-inside:avoid}body{background:#fff}}
 </style>
 </head>
 <body>
-<main>
-<h1>MedScan Privacy Policy</h1>
-<p class="muted">Last updated: 18 November 2026</p>
-<p>MedScan is built to keep your information on your device. This policy explains what the app handles and why.</p>
-<h2>1. Summary</h2>
-<p>There is no account and no sign-in. Your saved medicine details stay on your device. Photos are read on your device unless you turn on smart scan, which sends only the photo you scan to an online text-reading service (OCR.space). MedScan shows ads from Google AdMob; see section 8.</p>
-<h2>2. What the app handles</h2>
-<p>Photos of medicine packaging you take or choose, the text read from them, the details you type or confirm (name, strength, batch, manufacturer, dates), and your settings such as theme and language.</p>
-<h2>3. How it is used</h2>
-<p>Text is read on your device. The details are kept so you can see your medicines and be reminded before the printed expiry dates. They are not used for anything else.</p>
-<h2>4. Text recognition</h2>
-<p>Text on a photo is read on your device unless you turn on smart scan. With smart scan, the photo you scan is sent to the online text-reading service OCR.space, only to read the text on it. To show general information about a medicine, only its name (no photo, no personal details) is sent to public health information services: U.S. FDA (openFDA), the U.S. National Library of Medicine (RxNorm, MedlinePlus, DailyMed) and Wikipedia. Results are kept on your device for offline use.</p>
-<h2>5. Where it is stored</h2>
-<p>Everything is stored in the app&#x27;s private storage on your device. Deleting a medicine removes its record and its image. Uninstalling the app removes all of its data.</p>
-<h2>6. Security</h2>
-<p>Your data sits in the app&#x27;s private storage and is protected by your device&#x27;s own security, such as the screen lock and device encryption. Anyone who can unlock your phone could open the app, so keep your device locked.</p>
-<h2>7. Permissions</h2>
-<p>Camera: only to take a photo when you ask. Photos and files: only to open an image you choose. Notifications: only to remind you about expiry dates. You can turn any of these off in your device settings.</p>
-<h2>8. Network use</h2>
-<p>The app does not send your medicine records anywhere. It shows ads served by Google AdMob. To show and measure ads, Google may use your device&#x27;s advertising ID and similar device and usage information, and where the law requires it you are asked for your choice first. Ads are never based on your saved medicines, and you can reset or limit the advertising ID in your device settings. The app may also download its typeface from Google Fonts the first time it runs; your device&#x27;s network address is visible to those services.</p>
-<h2>9. Sharing and backups</h2>
-<p>MedScan does not sell or share your medicine records. Ads are provided by Google AdMob under Google&#x27;s own privacy policy. If your phone&#x27;s own backup feature is on, the operating system may include the app&#x27;s data in your device backup, under your own account and settings.</p>
-<h2>10. Children</h2>
-<p>The app is meant for adults managing medicines. A parent or guardian should manage the app for a child.</p>
-<h2>11. Changes to this policy</h2>
-<p>If this policy changes, the date at the top will change and the new text will appear here.</p>
+<a class="skip" href="#content">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <span class="logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3zm1 14h-2v-3H8v-2h3V8h2v3h3v2h-3v3z"/></svg></span>
+  <span class="brand">MedScan</span>
+  <span class="tag">Privacy Policy</span>
+</div></header>
 
-<h2>12. Contact</h2>
-<p>For questions about this policy, open an issue at <a href="https://github.com/hegdev2026/medscan-privacy/issues">github.com/hegdev2026/medscan-privacy/issues</a></p>
+<section class="hero"><div class="wrap">
+  <h1>Your privacy, in plain words</h1>
+  <p class="lead">MedScan is built to keep your information on your device. This policy explains what the app handles and why.</p>
+  <div class="meta"><span class="chip">Last updated 18 November 2026</span><span class="chip">Applies to the MedScan Android app</span></div>
+</div></section>
+
+<ul class="hls" aria-label="Privacy at a glance">
+<li class="hl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm5 17.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg><div><strong>Stays on your device</strong><span>Your medicine records are stored only on your phone.</span></div></li>
+<li class="hl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-4.4 0-8 2-8 4.5V21h16v-2.5c0-2.5-3.6-4.5-8-4.5z"/></svg><div><strong>No account</strong><span>No sign-in, no profile, nothing to register.</span></div></li>
+<li class="hl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8V5a1 1 0 0 1 1-1h3v2H6v2H4zm14-4h1a1 1 0 0 1 1 1v3h-2V6h-2V4h2zM4 16h2v2h2v2H5a1 1 0 0 1-1-1v-3zm14 2v-2h2v3a1 1 0 0 1-1 1h-3v-2h2zM7 11h10v2H7z"/></svg><div><strong>Smart scan is optional</strong><span>A photo leaves your phone only if you turn smart scan on.</span></div></li>
+<li class="hl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm3.2 10h1.7l.4-1.2h2.4l.4 1.2h1.7L10.6 8.5H9L6.2 15zm3.1-2.4.8-2.4.8 2.4H9.3zM15 8.5v6.5h1.6V8.5H15z"/></svg><div><strong>Ads from Google AdMob</strong><span>Ads never use your saved medicines.</span></div></li>
+</ul>
+
+<main id="content" class="layout">
+  <nav class="toc" aria-label="Contents"><details open><summary>Contents</summary><ol>
+<li><a href="#s1-summary"><span>1</span>Summary</a></li>
+<li><a href="#s2-what-the-app-handles"><span>2</span>What the app handles</a></li>
+<li><a href="#s3-how-it-is-used"><span>3</span>How it is used</a></li>
+<li><a href="#s4-text-recognition"><span>4</span>Text recognition</a></li>
+<li><a href="#s5-where-it-is-stored"><span>5</span>Where it is stored</a></li>
+<li><a href="#s6-security"><span>6</span>Security</a></li>
+<li><a href="#s7-permissions"><span>7</span>Permissions</a></li>
+<li><a href="#s8-network-use"><span>8</span>Network use</a></li>
+<li><a href="#s9-sharing-and-backups"><span>9</span>Sharing and backups</a></li>
+<li><a href="#s10-children"><span>10</span>Children</a></li>
+<li><a href="#s11-changes-to-this-policy"><span>11</span>Changes to this policy</a></li>
+  </ol></details></nav>
+  <div>
+    <div class="secs">
+<section class="sec" id="s1-summary" aria-labelledby="h-1">
+  <div class="num" aria-hidden="true">1</div>
+  <div class="body"><h2 id="h-1">Summary</h2><p>There is no account and no sign-in. Your saved medicine details stay on your device. Photos are read on your device unless you turn on smart scan, which sends only the photo you scan to an online text-reading service (OCR.space). MedScan shows ads from Google AdMob; see section 8.</p></div>
+</section>
+<section class="sec" id="s2-what-the-app-handles" aria-labelledby="h-2">
+  <div class="num" aria-hidden="true">2</div>
+  <div class="body"><h2 id="h-2">What the app handles</h2><p>Photos of medicine packaging you take or choose, the text read from them, the details you type or confirm (name, strength, batch, manufacturer, dates), and your settings such as theme and language.</p></div>
+</section>
+<section class="sec" id="s3-how-it-is-used" aria-labelledby="h-3">
+  <div class="num" aria-hidden="true">3</div>
+  <div class="body"><h2 id="h-3">How it is used</h2><p>Text is read on your device. The details are kept so you can see your medicines and be reminded before the printed expiry dates. They are not used for anything else.</p></div>
+</section>
+<section class="sec" id="s4-text-recognition" aria-labelledby="h-4">
+  <div class="num" aria-hidden="true">4</div>
+  <div class="body"><h2 id="h-4">Text recognition</h2><p>Text on a photo is read on your device unless you turn on smart scan. With smart scan, the photo you scan is sent to the online text-reading service OCR.space, only to read the text on it. To show general information about a medicine, only its name (no photo, no personal details) is sent to public health information services: U.S. FDA (openFDA), the U.S. National Library of Medicine (RxNorm, MedlinePlus, DailyMed) and Wikipedia. Results are kept on your device for offline use.</p></div>
+</section>
+<section class="sec" id="s5-where-it-is-stored" aria-labelledby="h-5">
+  <div class="num" aria-hidden="true">5</div>
+  <div class="body"><h2 id="h-5">Where it is stored</h2><p>Everything is stored in the app&#x27;s private storage on your device. Deleting a medicine removes its record and its image. Uninstalling the app removes all of its data.</p></div>
+</section>
+<section class="sec" id="s6-security" aria-labelledby="h-6">
+  <div class="num" aria-hidden="true">6</div>
+  <div class="body"><h2 id="h-6">Security</h2><p>Your data sits in the app&#x27;s private storage and is protected by your device&#x27;s own security, such as the screen lock and device encryption. Anyone who can unlock your phone could open the app, so keep your device locked.</p></div>
+</section>
+<section class="sec" id="s7-permissions" aria-labelledby="h-7">
+  <div class="num" aria-hidden="true">7</div>
+  <div class="body"><h2 id="h-7">Permissions</h2><p>Camera: only to take a photo when you ask. Photos and files: only to open an image you choose. Notifications: only to remind you about expiry dates. You can turn any of these off in your device settings.</p></div>
+</section>
+<section class="sec" id="s8-network-use" aria-labelledby="h-8">
+  <div class="num" aria-hidden="true">8</div>
+  <div class="body"><h2 id="h-8">Network use</h2><p>The app does not send your medicine records anywhere. It shows ads served by Google AdMob. To show and measure ads, Google may use your device&#x27;s advertising ID and similar device and usage information, and where the law requires it you are asked for your choice first. Ads are never based on your saved medicines, and you can reset or limit the advertising ID in your device settings. The app may also download its typeface from Google Fonts the first time it runs; your device&#x27;s network address is visible to those services.</p></div>
+</section>
+<section class="sec" id="s9-sharing-and-backups" aria-labelledby="h-9">
+  <div class="num" aria-hidden="true">9</div>
+  <div class="body"><h2 id="h-9">Sharing and backups</h2><p>MedScan does not sell or share your medicine records. Ads are provided by Google AdMob under Google&#x27;s own privacy policy. If your phone&#x27;s own backup feature is on, the operating system may include the app&#x27;s data in your device backup, under your own account and settings.</p></div>
+</section>
+<section class="sec" id="s10-children" aria-labelledby="h-10">
+  <div class="num" aria-hidden="true">10</div>
+  <div class="body"><h2 id="h-10">Children</h2><p>The app is meant for adults managing medicines. A parent or guardian should manage the app for a child.</p></div>
+</section>
+<section class="sec" id="s11-changes-to-this-policy" aria-labelledby="h-11">
+  <div class="num" aria-hidden="true">11</div>
+  <div class="body"><h2 id="h-11">Changes to this policy</h2><p>If this policy changes, the date at the top will change and the new text will appear here.</p></div>
+</section>
+    </div>
+    <div class="contact" role="note" style="margin-top:14px">
+      <h2>Questions about this policy?</h2>
+      <p>Open an issue at <a href="https://github.com/hegdev2026/medscan-privacy/issues">github.com/hegdev2026/medscan-privacy/issues</a> and we will get back to you.</p>
+    </div>
+  </div>
 </main>
+
+<footer>
+  <span>MedScan helps you keep track of medicine labels and expiry dates. It is not medical advice.</span>
+  <a href="#top" onclick="window.scrollTo(0,0);return false">Back to top ↑</a>
+</footer>
 </body>
 </html>
